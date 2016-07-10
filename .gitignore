@@ -1,0 +1,10 @@
+/node_modules
+/coverage
+/dist
+/docs
+npm-debug.log
+/.temp
+/.vscode
+.DS_Store
+/typings
+/documentation

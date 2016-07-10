@@ -1,0 +1,15 @@
+@import './external_test.scss';
+@import './external_test2.css';
+
+body {
+	margin: 0; padding: 0;
+	font-family: Arial;
+	background-color: cadetblue;
+	#app {
+		margin: 100px;
+		width: 300px;
+		height: 60px;
+		border: 1px solid salmon;
+		background-color: saddlebrown;
+	}
+}
