@@ -20,10 +20,12 @@
 		"node": true
 	},
 	"globals": {
+		"___dirname": true,
 		"___": true
 	},
 	"extends": ["airbnb/base"],
 	"rules": {
+		"strict": [2, "never"],
 		"import/no-unresolved": 0,
 		"import/no-extraneous-dependencies": 0,
 		"no-labels": 2,

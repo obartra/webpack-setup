@@ -3,7 +3,7 @@ const { resolve } = require('path');
 const { dependencies } = require('./typings.json');
 const precss = require('precss');
 const autoprefixer = require('autoprefixer');
-const JSDoc = require('jsdoc-webpack-plugin');
+// const JSDoc = require('jsdoc-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const I18nPlugin = require('i18n-webpack-plugin');
@@ -14,14 +14,14 @@ module.exports = {
 	},
 	module: {
 		loaders: [{
-			test:   /\.(scss|css)$/,
-			include: resolve('./css'),
-			loader: "style!css!postcss"
+			test: /\.(scss|css)$/,
+			include: [resolve('./css'), resolve('./src')],
+			loader: 'style!css!postcss'
 		}, {
 			test: /\.html$/,
 			include: resolve('./src'),
-			loader: "html?interpolate"
-		},{
+			loader: 'html?interpolate'
+		}, {
 			test: /\.(t|j)s$/,
 			include: resolve('./src'),
 			loader: ['babel', 'awesome-typescript']
@@ -40,9 +40,7 @@ module.exports = {
 		path: resolve('./dist'),
 		filename: '[name].js'
 	},
-	postcss: function () {
-		return [precss, autoprefixer];
-	},
+	postcss: () => [precss, autoprefixer],
 	plugins: [
 		new CleanWebpackPlugin(['dist']),
 		new webpack.optimize.UglifyJsPlugin({
@@ -56,7 +54,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			test: 'TEST',
 			template: '!!ejs!index.html',
-			filename: `index.en.html`
+			filename: 'index.en.html'
 		}),
 		new webpack.optimize.OccurrenceOrderPlugin(),
 		new I18nPlugin(null)

@@ -1,22 +1,21 @@
-const webpack = require('webpack');
 const config = require('./webpack.config.js');
 const _ = require('lodash');
 const { resolve } = require('path');
-const { dependencies } = require('./typings.json');
-const precss = require('precss');
-const autoprefixer = require('autoprefixer');
+// const { dependencies } = require('./typings.json');
+// const precss = require('precss');
+// const autoprefixer = require('autoprefixer');
 const JSDoc = require('jsdoc-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const I18nPlugin = require('i18n-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 const languages = {
-	en: null,
-	es: require('./dictionaries/es.json')
+	en: null //,
+	// es: require('./dictionaries/es.json')
 };
 const languageKeys = Object.keys(languages);
 
 module.exports = languageKeys.map(language => {
-
 	const plugins = [
 		new webpack.optimize.UglifyJsPlugin({
 			minimize: true,

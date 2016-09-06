@@ -1,3 +1,15 @@
-intro {
-	linear-gradient(to bottom, #4A4090, #372E6C)
+.intro > div {
+	color: rgb(66, 66, 66);
+	letter-spacing: 0.1em;
+	line-height: 145%;
+	margin: 0 auto;
+	width: 350px;
+}
+
+.intro {
+	background-color: #ecece9;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

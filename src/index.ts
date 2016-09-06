@@ -1,6 +1,6 @@
 import { blah } from './blah';
 import { blahTS } from './test';
-
+import './intro/intro';
 const hi = __('hi');
 
 const p = new Promise(resolve => {
